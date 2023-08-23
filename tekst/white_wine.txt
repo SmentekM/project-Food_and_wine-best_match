@@ -1,0 +1,11 @@
+dry_white_wine
+mueller_thurgau
+grechetto
+gewurztraminer
+chenin_blanc
+white_bordeaux
+semillon
+riesling
+sauternes
+sylvaner
+lillet_blanc
