@@ -1,0 +1,109 @@
+{% extends 'base.html'%}
+{% block content%}
+
+<div class="container mt-3">
+  <h2>Wybierz wino</h2>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Wino</th>
+        <th>Kolejny wybór</th>
+        <th>Sprawdz pasujace skladniki</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>white_wine</td>
+            <td><a href="/wine/white_wine" class="btn btn-success">Wybór marki</a></td>
+            <td>
+                <form action="/ingredients" method="POST">
+                <input type="hidden" value="white_wine" name="ask">
+                <button type="submit" class="btn btn-success">Sprawdz</button>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>red_wine</td>
+            <td><a href="/wine/red_wine" class="btn btn-success">Wybór marki</a></td>
+            <td>
+                <form action="/ingredients" method="POST">
+                <input type="hidden" value="red_wine" name="ask">
+                <button type="submit" class="btn btn-success">Sprawdz</button>
+                </form>
+            </td>
+        </tr>
+         <tr>
+            <td>dessert_wine</td>
+            <td><a href="/wine/desert_wine" class="btn btn-success">Wybór marki</a></td>
+            <td>
+                <form action="/ingredients" method="POST">
+                <input type="hidden" value="dessert_wine" name="ask">
+                <button type="submit" class="btn btn-success">Sprawdz</button>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>rose_wine</td>
+            <td><a href="/wine/rose_wine" class="btn btn-success">Wybór marki</a></td>
+            <td>
+                <form action="/ingredients" method="POST">
+                <input type="hidden" value="rose_wine" name="ask">
+                <button type="submit" class="btn btn-success">Sprawdz</button>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>sparkling_wine</td>
+            <td><a href="/wine/sparkling_wine" class="btn btn-success">Wybór marki</a></td>
+            <td>
+                <form action="/ingredients" method="POST">
+                <input type="hidden" value="sparkling_wine" name="ask">
+                <button type="submit" class="btn btn-success">Sprawdz</button>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>sherry</td>
+            <td><a href="/wine/sherry_wine" class="btn btn-success">Wybór marki</a></td>
+            <td>
+                <form action="/ingredients" method="POST">
+                <input type="hidden" value="sherry" name="ask">
+                <button type="submit" class="btn btn-success">Sprawdz</button>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>vermouth</td>
+            <td><a href="/wine/vermouth" class="btn btn-success">Wybór marki</a></td>
+            <td>
+                <form action="/ingredients" method="POST">
+                <input type="hidden" value="vermouth" name="ask">
+                <button type="submit" class="btn btn-success">Sprawdz</button>
+                </form>
+            </td>
+        </tr>
+          <tr>
+            <td>fruit_wine</td>
+            <td><a class="btn btn-success disable" role="button" aria-disabled="true" >Brak wyboru</a></td>
+            <td>
+                <form action="/ingredients" method="POST">
+                <input type="hidden" value="fruit_wine" name="ask">
+                <button type="submit" class="btn btn-success">Sprawdz</button>
+                </form>
+            </td>
+          </tr>
+      <tr>
+        <td>mead</td>
+        <td><a class="btn btn-success disable" role="button" aria-disabled="true" >Brak wyboru</a></td>
+        <td>
+            <form action="/ingredients" method="POST">
+            <input type="hidden" value="mead" name="ask">
+            <button type="submit" class="btn btn-success">Sprawdz</button>
+            </form>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+{% endblock%}

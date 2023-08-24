@@ -1,0 +1,42 @@
+{% extends 'base.html'%}
+{% block content%}
+
+<div class="container mt-3">
+  <h2>Wybierz wino</h2>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Wino</th>
+        <th>Kolejny wybór</th>
+        <th>Sprawdz pasujace skladniki</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>dry_white_wine</td>
+            <td><a href="/wine/white_wine/dry" class="btn btn-success">Wybór marki</a></td>
+                <td>
+            <form action="/ingredients" method="POST">
+            <input type="hidden" value="dry_white_wine" name="ask">
+            <button type="submit" class="btn btn-success">Sprawdz</button>
+            </form>
+        </td>
+        </tr>
+             {% for x in context.wino%}
+        <tr>
+            <td>{{x}}</td>
+            <td><a class="btn btn-success disable" role="button" aria-disabled="true" >Brak wyboru</a></td>
+                <td>
+            <form action="/ingredients" method="POST">
+            <input type="hidden" value="{{x}}" name="ask">
+            <button type="submit" class="btn btn-success">Sprawdz</button>
+            </form>
+        </td>
+          </tr>
+        </tr>
+         {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock%}
