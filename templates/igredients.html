@@ -1,8 +1,16 @@
 {% extends 'base.html'%}
 {% block content%}
-<h3>{{context.wynik}}</h3>
+<h1 style="color:blue;text-align:center">Oto co pasuje do wybranego wina</h1>
 
-
-
-
+    <ul class="container-mb 5">
+        <form action="/meal" method="POST">
+            {%for x in context.wynik%}
+            <li>{{x}}</li>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="{{x}}" id="flexCheckDefault" name="ask" >
+            </div>
+            {% endfor%}
+            <button type="submit" class="btn btn-success">Sprawdz</button>
+        </form>
+    </ul>
 {% endblock%}
