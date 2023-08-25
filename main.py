@@ -11,7 +11,8 @@ app = Flask(__name__)
 @app.route("/", methods=['POST', 'GET'])
 def index():
 
-    return render_template("index.html", )
+
+    return render_template("index.html")
 
 
 @app.route("/wine", methods=['POST', 'GET'])
@@ -24,10 +25,19 @@ def choise_wine():
 def ingredients():
     ask = request.form.get('ask')
     print(ask)
-    wynik = get_api(ask)
+    wynik = get_api_igredients(ask)
     context = {"wynik": wynik,
                }
     return render_template("igredients.html", context=context)
+@app.route("/meal", methods=['POST', 'GET'])
+def meal():
+    ask = request.form.get('ask')
+    print(ask)
+    wynik = get_api_meal(ask)
+    context = {"wynik": wynik,
+               }
+
+    return render_template("meal.html", context=context)
 
 @app.route("/wine/white_wine", methods=['POST', 'GET'])
 def white_wine():
