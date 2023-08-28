@@ -1,9 +1,0 @@
-bordeaux
-marsala
-port
-gamay
-dornfelder
-concord_wine
-sparkling_red_wine
-pinotage
-agiorgitiko
