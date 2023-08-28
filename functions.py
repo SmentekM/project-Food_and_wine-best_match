@@ -18,5 +18,16 @@ def get_api_igredients(ask):
 def get_api_meal(ask):
     api = requests.get(f'https://api.spoonacular.com/recipes/findByIngredients?ingredients={ask}&number=2&apiKey=358023a4e8234adb908c38e4bb7a13b2')
     date = api.json()
+    if date:
+        for idx in date:
+            results = idx['title']
+            img = idx["image"]
+            return results, img
 
+def get_api_wine(ask):
+    api = requests.get(
+        f'https://api.spoonacular.com/food/wine/pairing?food={ask}&apiKey=358023a4e8234adb908c38e4bb7a13b2')
+    date = api.json()['pairedWines']
     return date
+
+
