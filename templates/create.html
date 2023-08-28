@@ -1,0 +1,21 @@
+{% extends 'base.html'%}
+{% block content%}
+{% if context %}
+<h3>{{context.message}}</h3>
+{% else %}
+<h2>Create new user</h2>
+            <form action="/create_user" method="Post">
+              <div class="mb-3">
+                <label for="user_name" class="form-label">User name</label>
+                <input type="text" class="form-control" id="user_name" name="user">
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+              </div>
+
+              <button type="submit" class="btn btn-primary">Sing up</button>
+            </form>
+{% endif %}
+
+{% endblock%}

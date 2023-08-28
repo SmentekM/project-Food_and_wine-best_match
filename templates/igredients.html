@@ -1,16 +1,30 @@
 {% extends 'base.html'%}
 {% block content%}
-<h1 style="color:blue;text-align:center">Oto co pasuje do wybranego wina</h1>
+<h1 style="color:black;text-align:center">Best food and wine match</h1>
 
-    <ul class="container-mb 5">
-        <form action="/meal" method="POST">
+<h1 style="color:black;text-align:center">Choose dish ingredient to find the recipe</h1>
+<div class="d-flex justify-content-center">
+    <form action="/meal" method="POST">
+        <table  class="table  table-borderless " style="width: 300px;">
             {%for x in context.wynik%}
-            <li>{{x}}</li>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="{{x}}" id="flexCheckDefault" name="ask" >
-            </div>
+            <tbody>
+                <tr>
+
+                    <td class="table-secondary">{{x}}</td>
+                      <td class="table-secondary">
+                          <div class="form-check ">
+                           <input class="form-check-input" type="checkbox" value="{{x}}" id="flexCheckDefault" name="ask" >
+                            </div>
+                      </td>
             {% endfor%}
+                </tr>
+            </tbody>
+        </table>
+        <div class="d-flex justify-content-center">
             <button type="submit" class="btn btn-success">Sprawdz</button>
-        </form>
-    </ul>
+        </div>
+    </form>
+</div>
+
+
 {% endblock%}

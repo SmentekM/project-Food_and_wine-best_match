@@ -2,13 +2,13 @@
 {% block content%}
 
 <div class="container mt-3">
-  <h2>Wybierz wino</h2>
+  <h2>Wine selection</h2>
 
-  <table class="table table-striped">
+  <table class="table table-striped" style="width: 400px;">
     <thead>
       <tr>
-        <th>Wino</th>
-        <th>Sprawdz pasujace skladniki</th>
+        <th>Wine type</th>
+        <th>Check food ingredients matches</th>
       </tr>
     </thead>
     <tbody>
@@ -16,13 +16,13 @@
         <tr>
             <td>{{x}}</td>
                 <td>
-            <form action="/ingredients" method="POST">
-            <input type="hidden" value="{{x}}" name="ask">
-            <button type="submit" class="btn btn-success">Sprawdz</button>
-            </form>
-        </td>
-          </tr>
+                <form action="/ingredients" method="POST">
+                     <input type="hidden" value="{{x}}" name="ask">
+                    <button type="submit" class="btn btn-success">Check</button>
+                </form>
+             </td>
         </tr>
+
          {% endfor %}
     </tbody>
   </table>

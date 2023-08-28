@@ -1,0 +1,23 @@
+{% extends 'base.html'%}
+{% block content%}
+ <h2>Your food ingredient</h2>
+            <form action="/getwine" method="POST">
+              <div class="mb-3">
+                <input type="text" class="form-control" id="wine" name="ask">
+                <button type="submit" class="btn btn-success">Check</button>
+              </div>
+
+            </form>
+            <div class="mb-3">
+              {% if context.wynik %}
+              <ul>
+                <p>Best wine for your food ingredient</p>
+              {% for x in context.wynik %}
+                <li>{{x}}</li>
+                {% endfor %}
+              </ul>
+              {% endif %}
+            </div>
+
+{% endblock%}
+

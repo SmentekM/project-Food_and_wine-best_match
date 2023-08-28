@@ -2,13 +2,13 @@
 {% block content%}
 
 <div class="container mt-3">
-  <h2>Wybierz wino</h2>
+  <h2>Wine selection</h2>
 
   <table class="table table-striped">
     <thead>
       <tr>
-        <th>Wino</th>
-        <th>Sprawdz pasujace skladniki</th>
+        <th>Wine type</th>
+        <th>Check food ingredients matches</th>
       </tr>
     </thead>
     <tbody>
@@ -18,7 +18,7 @@
             <td>
             <form action="/ingredients" method="POST">
             <input type="hidden" value="{{x}}" name="ask">
-            <button type="submit" class="btn btn-success">Sprawdz</button>
+            <button type="submit" class="btn btn-success">Check</button>
             </form>
         </td>
           </tr>

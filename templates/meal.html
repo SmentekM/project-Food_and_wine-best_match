@@ -1,7 +1,10 @@
 {% extends 'base.html'%}
 {% block content%}
-<h1 style="color:blue;text-align:center">Oto co pasuje do wybranego wina</h1>
-
-<p>{{context.wynik}}</p>
-
-   {% endblock%}
+    <h1 style="color:black;text-align:center">Your dish:</h1>
+       <div class="p-5 d-flex justify-content-center">
+            <p>{{context.wynik}}</p>
+       </div>
+        <div class=" d-flex justify-content-center">
+            <img src="{{context.image}}"  alt="chleb i wino" width="400" height="250">
+        </div>
+{% endblock%}
